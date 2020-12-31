@@ -1,17 +1,17 @@
 import React from "react";
 
-import ContactFrom from "../../components/ContactForm";
-import ContentBlock from "../../components/ContentBlock";
-import MiddleBlock from "../../components/MiddleBlock";
-import Container from "../../common/Container";
-import ScrollToTop from "../../common/ScrollToTop";
+import ContactFrom from "../components/ContactForm";
+import ContentBlock from "../components/ContentBlock";
+import MiddleBlock from "../components/MiddleBlock";
+import Container from "../common/Container";
+import ScrollToTop from "../common/ScrollToTop";
 
-import Introduction from "../../content/introduction.json";
-import FirstBlock from "../../content/firstBlock.json";
-import SecondBlock from "../../content/secondBlock.json";
-import ThirdBlock from "../../content/thirdBlock.json";
-import FourthBlock from "../../content/fourthBlock.json";
-import ContactBlock from "../../content/contactBlock.json";
+import Introduction from "../content/introduction.json";
+import FirstBlock from "../content/firstBlock.json";
+import SecondBlock from "../content/secondBlock.json";
+import ThirdBlock from "../content/thirdBlock.json";
+import FourthBlock from "../content/fourthBlock.json";
+import ContactBlock from "../content/contactBlock.json";
 
 const Home = () => {
   return (

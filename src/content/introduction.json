@@ -1,13 +1,9 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed template using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Giải pháp quản lí hiệu quả dành cho doanh nghiệp",
+  "text": "Nhóm của chúng tôi tự hào cung cấp các hệ thống hỗ trợ cho các doanh nghiệp trong các lĩnh vực quản lý nguồn nhân lực cũng như tuyển dụng, đào tạo. Hỗ trợ phòng nhân sự quản lý dữ liệu một cách mượt mà.",
   "button": [
     {
-      "title": "Explore"
-    },
-    {
-      "title": "Learn More",
-      "color": "#fff"
+      "title": "Mua ngay"
     }
   ]
 }

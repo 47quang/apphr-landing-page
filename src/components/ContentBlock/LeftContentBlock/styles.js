@@ -25,10 +25,10 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const ServiceWrapper = styled.div`
+export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  max-width: 100%;
+  max-width: 400px;
 `;
 
 export const MinTitle = styled.h6`

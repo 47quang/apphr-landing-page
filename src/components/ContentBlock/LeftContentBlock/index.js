@@ -3,10 +3,11 @@ import { Row, Col } from "antd";
 import SvgIcon from "../../../common/SvgIcon";
 import { useTranslation } from "react-i18next";
 import { Slide } from "react-reveal";
+import Button from "../../../common/Button";
 
 import * as S from "./styles";
 
-const LeftContentBlock = ({ icon, title, content, section }) => {
+const LeftContentBlock = ({ icon, title, content, button }) => {
   const { t } = useTranslation();
 
   return (
@@ -22,21 +23,17 @@ const LeftContentBlock = ({ icon, title, content, section }) => {
             <S.ContentWrapper>
               <S.Title>{t(title)}</S.Title>
               <S.Content>{t(content)}</S.Content>
-              <S.ServiceWrapper>
-                <Row type="flex" justify="space-between">
-                  {section &&
-                    typeof section === "object" &&
-                    section.map((item, id) => {
-                      return (
-                        <Col key={id} lg={12} md={12} sm={12} xs={12}>
-                          <SvgIcon src={item.icon} />
-                          <S.MinTitle>{t(item.title)}</S.MinTitle>
-                          <S.MinPara>{t(item.content)}</S.MinPara>
-                        </Col>
-                      );
-                    })}
-                </Row>
-              </S.ServiceWrapper>
+              <S.ButtonWrapper>
+                {button &&
+                  typeof button === "object" &&
+                  button.map((item, id) => {
+                    return (
+                      <Button key={id} color={item.color} width="true">
+                        {t(item.title)}
+                      </Button>
+                    );
+                  })}
+              </S.ButtonWrapper>
             </S.ContentWrapper>
           </Slide>
         </Col>
