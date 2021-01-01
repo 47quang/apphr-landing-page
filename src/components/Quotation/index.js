@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './styles';
 import { Col, Row } from 'antd';
 import Button from '../../common/Button';
+import { useTranslation } from 'react-i18next';
 
 const detailQuotation = [
   {
@@ -55,11 +56,13 @@ const detailQuotation = [
 ];
 
 const Card = ({ title, price, description, color }) => {
+  const { t } = useTranslation();
+
   return (
     <S.CardContainer {...color}>
       <S.CardTitle {...color}>{title}</S.CardTitle>
       <S.CardPrice {...color}>{price}</S.CardPrice>
-      <S.CardPerMonth {...color}>per month</S.CardPerMonth>
+      <S.CardPerMonth {...color}>{t('per month')}</S.CardPerMonth>
       <S.CardDescription {...color}>{description}</S.CardDescription>
       <S.CardButton {...color}>
         <Button
@@ -68,7 +71,7 @@ const Card = ({ title, price, description, color }) => {
             color: color && color.btnColor ? 'black' : 'white',
           }}
         >
-          Mua ngay
+          {t('Buy now')}
         </Button>
       </S.CardButton>
     </S.CardContainer>

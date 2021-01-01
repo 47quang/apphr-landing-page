@@ -63,6 +63,12 @@ export const Input = styled.input`
   &:hover {
     border-color: rgb(80, 95, 152);
   }
+
+  @media only screen and (max-width: 768px) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
@@ -72,4 +78,8 @@ export const Button = styled.button`
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background: #858FB7;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;

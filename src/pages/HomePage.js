@@ -12,7 +12,11 @@ import Customer from '../components/Customer';
 import HeaderOnPage from '../components/HeaderOnPage';
 import ContactForm from '../components/ContactForm';
 
+import { useTranslation } from 'react-i18next';
+
+
 const HomePage = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Container>
@@ -26,7 +30,7 @@ const HomePage = () => {
           button={Introduction.button}
           icon="designer_1.svg"
         />
-        <MiddleBlock id="service" title="Dịch vụ" />
+        <MiddleBlock id="service" title={t('Service')} />
         <ContentBlock
           type="right"
           mt="2"
@@ -48,12 +52,12 @@ const HomePage = () => {
           button={FourthBlock.button}
           icon="training.svg"
         />
-        <MiddleBlock id="quotation" title="Bảng giá" />
+        <MiddleBlock id="quotation" title={t('Quotation')} />
         <Quotation></Quotation>
       </Container>
-      <MiddleBlock id="customer" title="Khách hàng" />
+      <MiddleBlock id="customer" title={t('Customer')} />
       <Customer></Customer>
-      <MiddleBlock id="contact" title="Liên hệ" />
+      <MiddleBlock id="contact" title={t('Contact')} />
       <ContactForm></ContactForm>
     </>
   );
