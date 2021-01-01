@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 import * as S from './styles';
+import { useTranslation } from 'react-i18next';
 
-const CustomInput = (props) => (
-  <S.InputContainer>
-    <S.Input {...props} spellcheck="false" />
-    <S.Button>Đăng ký</S.Button>
-  </S.InputContainer>
-);
+const CustomInput = (props) => {
+  const { t } = useTranslation();
+
+  return (
+    <S.InputContainer>
+      <S.Input {...props} spellcheck="false" />
+      <S.Button>{t('Register')}</S.Button>
+    </S.InputContainer>
+  );
+};
 
 const Contact = ({ id, title, content }) => {
   const [values, setValue] = useState('');

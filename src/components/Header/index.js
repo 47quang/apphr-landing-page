@@ -57,7 +57,7 @@ const Header = () => {
                 <PngIcon src="logo.png" style={{ height: 70, alignItems: 'center' }} />
               </S.LogoContainer>
             </Col>
-            <Col span={8}></Col>
+            <Col span={7}></Col>
             <S.NotHidden>
               <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
                 <MenuItem />
