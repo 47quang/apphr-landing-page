@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 import { MenuOutlined } from '@ant-design/icons';
 
 export const Header = styled.header`
@@ -77,14 +77,35 @@ export const CustomNavLinkSmall = styled(NavLink)`
   @media only screen and (max-width: 768px) {
     margin: 1.25rem 2rem;
   }
+  &.active {
+    color: green !important;
+  }
 `;
 
 export const CustomLink = styled(Link)`
   color: white;
+  position: relative;
+
+  &.active:before {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0px;
+    bottom: -10px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+    border-radius: 10px;
+  }
+
+  &:hover:before {
+    background: #000;
+  }
   @media only screen and (max-width: 768px) {
     color: black;
   }
 `;
+
 
 export const Label = styled.span`
   font-size: 12px;

@@ -6,10 +6,9 @@ import { useTranslation } from 'react-i18next';
 import PngIcon from '../../common/PngIcon';
 import Button from '../../common/Button';
 import Container from '../../common/Container';
-
 import * as S from './styles';
 
-const Header = () => {
+const Header = (props) => {
   const [isNavVisible] = useState(false);
   const [isSmallScreen] = useState(false);
   const [visible, setVisibility] = useState(false);
@@ -27,7 +26,7 @@ const Header = () => {
     return (
       <Fragment>
         <S.CustomNavLinkSmall>
-          <S.CustomLink to="/">{t('Home')}</S.CustomLink>
+          <S.CustomLink exact to="/">{t('Home')}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
           <S.CustomLink to="/hr-module">{t('Human Resources')}</S.CustomLink>
@@ -60,7 +59,7 @@ const Header = () => {
             <Col span={7}></Col>
             <S.NotHidden>
               <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-                <MenuItem />
+                <MenuItem/>
               </Col>
             </S.NotHidden>
             <S.Burger onClick={showDrawer}>

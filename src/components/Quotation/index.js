@@ -86,7 +86,7 @@ const Quotation = () => {
           {detailQuotation.map((q, index) => {
             const { title, price, description, color } = q;
             return (
-              <Col key={index} xs={24} sm={24} md={12} lg={6} xl={6}>
+              <Col key={index} xs={24} sm={24} md={12} lg={12} xl={6}>
                 <Card title={title} price={price} description={description} color={color}></Card>
               </Col>
             );
