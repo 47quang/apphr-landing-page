@@ -10,6 +10,8 @@ import FourthBlock from '../content/fourthBlock.json';
 import Quotation from '../components/Quotation';
 import Customer from '../components/Customer';
 import HeaderOnPage from '../components/HeaderOnPage';
+import ContactForm from '../components/ContactForm';
+
 const HomePage = () => {
   return (
     <>
@@ -51,6 +53,8 @@ const HomePage = () => {
       </Container>
       <MiddleBlock id="customer" title="Khách hàng" />
       <Customer></Customer>
+      <MiddleBlock id="contact" title="Liên hệ" />
+      <ContactForm></ContactForm>
     </>
   );
 };

@@ -6,6 +6,7 @@ Các công nghệ sử dụng
 - Thư viện `React`
 - Framework UI `Ant Design`
 - Thư viện hỗ trợ đa ngôn ngữ `i18n`
+- Animation với `react reveal`
 - Và một số thư viện khác
 
 

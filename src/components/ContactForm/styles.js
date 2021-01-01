@@ -1,14 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ContactContainer = styled.div`
   padding: 5rem 0;
-`;
+  background: -webkit-linear-gradient(top, rgb(80, 95, 152, 0.5) 0%,rgb(80, 95, 152, 0.5) 100%), url("img/icons/contact.png") repeat 0 0;`;
 
 export const Contact = styled.section`
   position: relative;
   width: 100%;
-  max-width: 1280px;
-  padding: ${(props) => (props.padding ? "8rem 0rem" : "")};
+  padding: ${(props) => (props.padding ? '8rem 0rem' : '')};
 `;
 
 export const IconContainer = styled.div`
@@ -41,4 +40,36 @@ export const ButtonContainer = styled.div`
   @media only screen and (max-width: 414px) {
     padding-top: 0.75rem;
   }
+`;
+
+export const InputContainer = styled.div`
+  display: inline-block;
+  width: 100%;
+  padding: 10px 5px;
+`;
+
+export const Input = styled.input`
+  width: 80%;
+  outline: none;
+  border: none;
+  font-size: 0.875rem;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.3s ease-in;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #000;
+
+  &:focus,
+  &:hover {
+    border-color: rgb(80, 95, 152);
+  }
+`;
+
+export const Button = styled.button`
+  width: 20%;
+  border: none;
+  padding: 1rem 1.25rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #858FB7;
 `;
