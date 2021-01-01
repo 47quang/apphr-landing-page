@@ -4,13 +4,12 @@ import ScrollToTop from '../common/ScrollToTop';
 import ContentBlock from '../components/ContentBlock';
 import Introduction from '../content/introduction.json';
 import MiddleBlock from '../components/MiddleBlock';
-import SecondBlock from "../content/secondBlock.json";
-import ThirdBlock from "../content/thirdBlock.json";
-import FourthBlock from "../content/fourthBlock.json";
-import ContactFrom from "../components/ContactForm";
-import ContactBlock from "../content/contactBlock.json";
-
-
+import SecondBlock from '../content/secondBlock.json';
+import ThirdBlock from '../content/thirdBlock.json';
+import FourthBlock from '../content/fourthBlock.json';
+import ContactFrom from '../components/ContactForm';
+import ContactBlock from '../content/contactBlock.json';
+import Quotation from '../components/Quotation';
 
 const HomePage = () => {
   return (
@@ -48,6 +47,7 @@ const HomePage = () => {
         icon="work_time.svg"
       />
       <ContactFrom title={ContactBlock.title} content={ContactBlock.text} />
+      <Quotation></Quotation>
     </Container>
   );
 };
