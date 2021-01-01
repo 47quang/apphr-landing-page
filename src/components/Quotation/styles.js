@@ -5,12 +5,14 @@ export const Header = styled.header`
 `;
 
 export const CardContainer = styled.div`
-  border: 1px solid black;
   border-radius: 10px;
   padding: 2rem;
   margin: 1rem 0;
   text-align: center;
   background-color: ${props => props.bgColor || 'white'};
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
 `;
 
 export const CardTitle = styled.div`
@@ -60,4 +62,8 @@ export const Layout = styled.div`
   background: -o-linear-gradient(170deg, white, 50%, #E7ECFF 50%);
   background: -moz-linear-gradient(170deg, white, 50%, #E7ECFF 50%);
   background: linear-gradient(170deg, white, 50%, #E7ECFF 50%);
+  -webkit-box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 10px -5px rgba(0,0,0,0.75);
+  margin-bottom: 10px;
 `;
