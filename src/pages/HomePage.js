@@ -7,6 +7,9 @@ import MiddleBlock from '../components/MiddleBlock';
 import SecondBlock from "../content/secondBlock.json";
 import ThirdBlock from "../content/thirdBlock.json";
 import FourthBlock from "../content/fourthBlock.json";
+import ContactFrom from "../components/ContactForm";
+import ContactBlock from "../content/contactBlock.json";
+
 
 
 const HomePage = () => {
@@ -25,6 +28,7 @@ const HomePage = () => {
       <MiddleBlock title="Dịch vụ" />
       <ContentBlock
         type="right"
+        mt="2"
         title={SecondBlock.title}
         content={SecondBlock.text}
         icon="mobile_login.svg"
@@ -37,11 +41,13 @@ const HomePage = () => {
       />
       <ContentBlock
         type="left"
+        mt="10"
         title={FourthBlock.title}
         content={FourthBlock.text}
         button={FourthBlock.button}
         icon="work_time.svg"
       />
+      <ContactFrom title={ContactBlock.title} content={ContactBlock.text} />
     </Container>
   );
 };

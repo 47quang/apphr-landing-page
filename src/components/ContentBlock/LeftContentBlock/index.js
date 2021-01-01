@@ -7,11 +7,10 @@ import Button from "../../../common/Button";
 
 import * as S from "./styles";
 
-const LeftContentBlock = ({ icon, title, content, button }) => {
+const LeftContentBlock = ({ icon, title, content, button, ...rest }) => {
   const { t } = useTranslation();
-
   return (
-    <S.LeftContentBlock>
+    <S.LeftContentBlock {...rest}>
       <Row type="flex" justify="space-between" align="middle">
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>

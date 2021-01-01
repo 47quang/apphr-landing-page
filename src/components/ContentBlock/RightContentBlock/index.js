@@ -8,11 +8,11 @@ import Button from "../../../common/Button";
 
 import * as S from "./styles";
 
-const RightBlock = ({ last, first, title, content, button, icon }) => {
+const RightBlock = ({ last, first, title, content, button, icon, ...rest }) => {
   const { t } = useTranslation();
 
   return (
-    <S.RightBlockContainer last={last} first={first}>
+    <S.RightBlockContainer last={last} first={first} {...rest}>
       <Row type="flex" justify="space-between" align="middle">
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
