@@ -77,18 +77,20 @@ const Card = ({ title, price, description, color }) => {
 
 const Quotation = () => {
   return (
-    <S.Container>
-      <Row gutter={40}>
-        {detailQuotation.map((q, index) => {
-          const { title, price, description, color } = q;
-          return (
-            <Col key={index} xs={24} sm={24} md={12} lg={6} xl={6}>
-              <Card title={title} price={price} description={description} color={color}></Card>
-            </Col>
-          );
-        })}
-      </Row>
-    </S.Container>
+    <S.Layout>
+      <S.Container>
+        <Row gutter={40}>
+          {detailQuotation.map((q, index) => {
+            const { title, price, description, color } = q;
+            return (
+              <Col key={index} xs={24} sm={24} md={12} lg={6} xl={6}>
+                <Card title={title} price={price} description={description} color={color}></Card>
+              </Col>
+            );
+          })}
+        </Row>
+      </S.Container>
+    </S.Layout>
   );
 };
 

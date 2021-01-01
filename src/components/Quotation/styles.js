@@ -51,4 +51,15 @@ export const CardButton = styled.div`
 
 export const Container = styled.div`
   width: 100%;
+  margin: auto;
+`;
+
+export const Layout = styled.div`
+  width: 100%;
+  padding: 2rem;
+  border-radius: 20px;
+  background: -webkit-linear-gradient(170deg, white, 50%, #E7ECFF 50%);
+  background: -o-linear-gradient(170deg, white, 50%, #E7ECFF 50%);
+  background: -moz-linear-gradient(170deg, white, 50%, #E7ECFF 50%);
+  background: linear-gradient(170deg, white, 50%, #E7ECFF 50%);
 `;
