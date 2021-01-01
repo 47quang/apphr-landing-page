@@ -5,7 +5,7 @@ export const RightBlockContainer = styled.section`
   padding: ${(props) => (props.mt || 0) + "rem " + (props.mr || 0) + "rem " + (props.mb || 0) + "rem " + (props.ml || 0) + "rem"};
 
   @media only screen and (max-width: 768px) {
-    padding: ${(props) => (props.last ? "5rem 0 6rem" : "8rem 0 6rem")};
+    padding: ${(props) => (props.last ? "2rem 0 2rem" : "2rem 0 2rem")};
   }
 `;
 

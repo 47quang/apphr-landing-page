@@ -58,7 +58,7 @@ const Styles = createGlobalStyle`
         color: #2E186A;
 
         :hover {
-            color: rgb(255, 130, 92);
+            color: black;
         }
     }
     
@@ -85,7 +85,7 @@ const Styles = createGlobalStyle`
     }
 
     .anticon.ant-notification-notice-icon-success {
-        color: rgb(255,130,92);
+        color: black;
     }
 
     .ant-select-focused .ant-select-selector,

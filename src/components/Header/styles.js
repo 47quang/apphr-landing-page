@@ -18,8 +18,6 @@ export const Container = styled.div`
   max-width: 1280px;
   padding-right: 25px;
   padding-left: 25px;
-  margin-right: auto;
-  margin-left: auto;
 `;
 
 export const NavLink = styled.div`
@@ -85,6 +83,9 @@ export const CustomNavLinkSmall = styled(NavLink)`
 
 export const CustomLink = styled(Link)`
   color: white;
+  @media only screen and (max-width: 768px) {
+    color: black;
+  }
 `;
 
 export const Label = styled.span`
