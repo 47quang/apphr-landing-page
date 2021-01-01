@@ -18,3 +18,5 @@ Các công nghệ sử dụng
 - Chỉnh sửa tệp `package.json`: thêm `"start": "node server/server.js"` vào `script`
 - Commit code
 - Cuối cùng chạy lệnh: `git push heroku master`
+
+Để khởi chạy ứng dụng, chạy lệnh: `npm run start:dev`, đường dẫn `http://localhost:3000`

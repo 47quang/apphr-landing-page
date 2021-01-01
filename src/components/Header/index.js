@@ -30,13 +30,13 @@ const Header = () => {
           <S.CustomLink to="/">{t('Home')}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
-          <S.CustomLink to="/">{t('Human Resources')}</S.CustomLink>
+          <S.CustomLink to="/hr-module">{t('Human Resources')}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
-          <S.CustomLink to="/">{t('Training')}</S.CustomLink>
+          <S.CustomLink to="/training-module">{t('Training')}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
-          <S.CustomLink to="/">{t('About')}</S.CustomLink>
+          <S.CustomLink to="/about">{t('About')}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall style={{ width: '150px' }}>
           <Link to="/">
