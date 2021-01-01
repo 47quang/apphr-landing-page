@@ -1,4 +1,9 @@
 {
   "title": "Ready made sections",
-  "text": "Landy comes with a set of ready to use sections to help you easily create a landing page for your own brand, with all the content your startup desires. In order to replace any dummy elements (text, image, etc..) all you need to do is go to content folder and input your real content."
+  "text": "Ngoài ra, trong hệ thống quản lý chấm công, chúng tôi còn hỗ trợ một trang web quản trị dữ liệu người dùng thân thiện, cho phép doanh nghiệp lưu trữ dữ liệu một cách dễ dàng, phân quyền cho người dùng linh động cũng như điều khiển công việc vận hành một cách trơn tru.",
+  "button": [
+    {
+      "title": "Tìm hiểu thêm"
+    }
+  ]
 }

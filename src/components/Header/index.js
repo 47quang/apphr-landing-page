@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import { useTranslation } from "react-i18next";
 
 import SvgIcon from "../../common/SvgIcon";
+import PngIcon from "../../common/PngIcon";
 import Button from "../../common/Button";
 
 import * as S from "./styles";
@@ -27,17 +28,20 @@ const Header = () => {
     return (
       <Fragment>
         <S.CustomNavLinkSmall>
-          <Link to="/">{t("About")}</Link>
+          <S.CustomLink to="/">{t("Home")}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
-          <Link to="/">{t("Mission")}</Link>
+          <S.CustomLink to="/">{t("Human Resources")}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall>
-          <Link to="/">{t("Product")}</Link>
+          <S.CustomLink to="/">{t("Training")}</S.CustomLink>
+        </S.CustomNavLinkSmall>
+        <S.CustomNavLinkSmall>
+          <S.CustomLink to="/">{t("About")}</S.CustomLink>
         </S.CustomNavLinkSmall>
         <S.CustomNavLinkSmall style={{ width: "180px" }}>
           <Link to="/">
-            <Button>{t("Contact")}</Button>
+            <Button style={{color: 'black', background: 'white'}}>{t("Sign Up")}</Button>
           </Link>
         </S.CustomNavLinkSmall>
       </Fragment>
@@ -48,13 +52,13 @@ const Header = () => {
     <S.Header>
       <S.Container>
         <Row type="flex" justify="space-between" gutter={20}>
-          <Col>
+          <Col style={{display: 'flex', alignItems: 'center'}}>
             <S.LogoContainer to="/">
-              <SvgIcon src="logo.svg" />
+              <PngIcon src="logo.png" style={{height: 70, alignItems: 'center'}} />
             </S.LogoContainer>
           </Col>
           <S.NotHidden>
-            <Col style={{ display: "flex", alignItems: "baseline" }}>
+            <Col style={{ display: "flex", alignItems: "center" }}>
               <MenuItem />
             </Col>
           </S.NotHidden>
@@ -69,7 +73,7 @@ const Header = () => {
           unmountOnExit
         >
           <Drawer closable={false} visible={visible} onClose={onClose}>
-            <Col style={{ marginBottom: "2.5rem" }}>
+            <Col stylDrawere={{ marginBottom: "2.5rem" }}>
               <S.Label onClick={onClose}>
                 <Col span={12}>
                   <S.Menu>Menu</S.Menu>

@@ -1,4 +1,9 @@
 {
-  "title": "That's about it!",
-  "text": "If you are familiar with React, or SPA frameworks in general, there shouldn't be any confusing part about this template, if not, you can always reach out to me and I'll try me best to answer your question."
+  "title": "Hệ thống quản lý đào tạo",
+  "text": "Hệ thống cung cấp giải pháp quản lý đào tạo cho nhân viên, bao gồm quản lý các khóa học, thời gian học, quản lý kết quả của nhân viên để đánh giá chất lượng trong quá trình đào tạo. Ngoài ra cũng hỗ trợ tính toán KPI dựa trên kết quả đào tạo phục vụ cho quá trình cân nhắc thăng tiến của nhân viên khi hoạt động tại doanh nghiệp.",
+  "button": [
+    {
+      "title": "Tìm hiểu thêm"
+    }
+  ]
 }

@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
 
 export const Header = styled.header`
-  padding: 1rem 0.5rem;
+  background-color: #505F98;
 `;
 
 export const LogoContainer = styled(Link)`
   display: flex;
-  padding-top: 1rem;
+  margin: auto 0;
+  padding: 10px;
 `;
 
 export const Container = styled.div`
@@ -57,6 +58,7 @@ export const Burger = styled.div`
 `;
 
 export const NotHidden = styled.div`
+  margin: auto;
   @media only screen and (max-width: 768px) {
     display: none;
   }
@@ -71,14 +73,18 @@ export const Menu = styled.h5`
 `;
 
 export const CustomNavLinkSmall = styled(NavLink)`
-  font-size: 1rem;
-  color: #000000;
+  font-size: 1.3rem;
+  color: #ffffff;
   transition: color 0.2s ease-in;
-  margin: 0.25rem 2rem;
+  margin: 0rem 2rem;
 
   @media only screen and (max-width: 768px) {
     margin: 1.25rem 2rem;
   }
+`;
+
+export const CustomLink = styled(Link)`
+  color: white;
 `;
 
 export const Label = styled.span`

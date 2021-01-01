@@ -5,12 +5,15 @@ import ContentBlock from '../components/ContentBlock';
 import Introduction from '../content/introduction.json';
 import MiddleBlock from '../components/MiddleBlock';
 import SecondBlock from "../content/secondBlock.json";
+import ThirdBlock from "../content/thirdBlock.json";
+import FourthBlock from "../content/fourthBlock.json";
 
 
 const HomePage = () => {
   return (
     <Container>
       <ScrollToTop />
+
       <ContentBlock
         type="right"
         first="true"
@@ -21,19 +24,23 @@ const HomePage = () => {
       />
       <MiddleBlock title="Dịch vụ" />
       <ContentBlock
-        type="left"
-        first="true"
+        type="right"
         title={SecondBlock.title}
         content={SecondBlock.text}
         icon="mobile_login.svg"
       />
       <ContentBlock
         type="left"
-        first="true"
-        title={SecondBlock.title}
-        content={SecondBlock.text}
-        button={SecondBlock.button}
+        content={ThirdBlock.text}
+        button={ThirdBlock.button}
         icon="data.svg"
+      />
+      <ContentBlock
+        type="left"
+        title={FourthBlock.title}
+        content={FourthBlock.text}
+        button={FourthBlock.button}
+        icon="work_time.svg"
       />
     </Container>
   );

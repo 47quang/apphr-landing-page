@@ -28,7 +28,7 @@ export const FormGroup = styled.form`
 
 export const Span = styled.span`
   display: block;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   color: rgb(255, 130, 92);
   height: 0.775rem;
