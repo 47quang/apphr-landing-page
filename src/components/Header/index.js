@@ -3,8 +3,6 @@ import { Row, Col, Drawer } from "antd";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { useTranslation } from "react-i18next";
-
-import SvgIcon from "../../common/SvgIcon";
 import PngIcon from "../../common/PngIcon";
 import Button from "../../common/Button";
 

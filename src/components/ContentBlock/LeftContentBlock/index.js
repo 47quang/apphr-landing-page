@@ -11,7 +11,7 @@ const LeftContentBlock = ({ icon, title, content, button, ...rest }) => {
   const { t } = useTranslation();
   return (
     <S.LeftContentBlock {...rest}>
-      <Row type="flex" justify="space-between" align="middle">
+      <Row type="flex" justify="space-between" align={title ? null: 'middle'}>
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
             <SvgIcon src={icon} className="about-block-image" />

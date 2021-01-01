@@ -12,7 +12,7 @@ export const RightBlockContainer = styled.section`
 export const Title = styled.h6``;
 
 export const Content = styled.p`
-  margin: 1.5rem 0 2rem 0;
+  margin: rem 0 2rem 0;
 `;
 
 export const ContentWrapper = styled.div`

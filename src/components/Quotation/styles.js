@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import Button from '../../common/Button';
-
-
 
 export const Header = styled.header`
   background-color: #505F98;
@@ -11,6 +8,7 @@ export const CardContainer = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   padding: 2rem;
+  margin: 1rem 0;
   text-align: center;
   background-color: ${props => props.bgColor || 'white'};
 `;

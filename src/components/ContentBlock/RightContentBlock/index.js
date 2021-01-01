@@ -13,7 +13,7 @@ const RightBlock = ({ last, first, title, content, button, icon, ...rest }) => {
 
   return (
     <S.RightBlockContainer last={last} first={first} {...rest}>
-      <Row type="flex" justify="space-between" align="middle">
+      <Row type="flex" justify="space-between" align={title ? null: 'middle'}>
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
             <S.ContentWrapper>
