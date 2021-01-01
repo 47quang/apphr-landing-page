@@ -3,10 +3,7 @@ import { Row, Col, Select } from "antd";
 import i18n from "i18next";
 import { useTranslation } from "react-i18next";
 import { Fade } from "react-reveal";
-
 import Container from "../../common/Container";
-import SvgIcon from "../../common/SvgIcon";
-
 import * as S from "./styles";
 
 const Footer = () => {
@@ -92,66 +89,6 @@ const Footer = () => {
             </Row>
           </Container>
         </S.Footer>
-        <S.Extra>
-          <Container border="true">
-            <Row
-              type="flex"
-              justify="space-between"
-              align="middle"
-              style={{ paddingTop: "3rem" }}
-            >
-              <S.NavLink to="/">
-                <S.LogoContainer>
-                  <SvgIcon src="logo.svg" />
-                </S.LogoContainer>
-              </S.NavLink>
-              <S.FooterContainer>
-                <a
-                  href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SvgIcon src="github.svg" />
-                </a>
-                <a
-                  href="https://twitter.com/Adrinlolx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SvgIcon src="twitter.svg" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/lasha-kakabadze//"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SvgIcon src="linkedin.svg" />
-                </a>
-                <a
-                  href="https://github.com/Adrinlol/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SvgIcon src="instagram.svg" />
-                </a>
-                <a
-                  href="https://medium.com/@lashakakabadze/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <SvgIcon src="medium.svg" />
-                </a>
-              </S.FooterContainer>
-            </Row>
-            <Row type="flex" justify="space-between">
-              <Col lg={12} md={12} sm={12} xs={24}>
-                <S.CSite>
-                  All Rights Reserved - Landy © {new Date().getFullYear()}
-                </S.CSite>
-              </Col>
-            </Row>
-          </Container>
-        </S.Extra>
       </Fade>
     </Fragment>
   );

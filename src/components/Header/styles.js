@@ -15,9 +15,6 @@ export const LogoContainer = styled(Link)`
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1280px;
-  padding-right: 25px;
-  padding-left: 25px;
 `;
 
 export const NavLink = styled.div`
@@ -51,6 +48,7 @@ export const Burger = styled.div`
   @media only screen and (max-width: 768px) {
     display: block !important;
   }
+  color: white;
   padding: 1.25rem 1.25rem;
   display: none;
 `;

@@ -57,8 +57,9 @@ const Header = () => {
                 <PngIcon src="logo.png" style={{ height: 70, alignItems: 'center' }} />
               </S.LogoContainer>
             </Col>
+            <Col span={8}></Col>
             <S.NotHidden>
-              <Col style={{ display: 'flex', alignItems: 'center' }}>
+              <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
                 <MenuItem />
               </Col>
             </S.NotHidden>
@@ -73,7 +74,7 @@ const Header = () => {
             unmountOnExit
           >
             <Drawer closable={false} visible={visible} onClose={onClose}>
-              <Col stylDrawere={{ marginBottom: '2.5rem' }}>
+              <Col styleDrawer={{ marginBottom: '2.5rem' }}>
                 <S.Label onClick={onClose}>
                   <Col span={12}>
                     <S.Menu>Menu</S.Menu>
