@@ -9,12 +9,13 @@ import ThirdBlock from '../content/thirdBlock.json';
 import FourthBlock from '../content/fourthBlock.json';
 import Quotation from '../components/Quotation';
 import Customer from '../components/Customer';
-
+import HeaderOnPage from '../components/HeaderOnPage';
 const HomePage = () => {
   return (
     <>
       <Container>
         <ScrollToTop />
+        <HeaderOnPage></HeaderOnPage>
         <ContentBlock
           type="right"
           first="true"
@@ -23,7 +24,7 @@ const HomePage = () => {
           button={Introduction.button}
           icon="designer_1.svg"
         />
-        <MiddleBlock title="Dịch vụ" />
+        <MiddleBlock id="service" title="Dịch vụ" />
         <ContentBlock
           type="right"
           mt="2"
@@ -45,10 +46,10 @@ const HomePage = () => {
           button={FourthBlock.button}
           icon="training.svg"
         />
-        <MiddleBlock title="Bảng giá" />
+        <MiddleBlock id="quotation" title="Bảng giá" />
         <Quotation></Quotation>
       </Container>
-        <MiddleBlock title="Khách hàng" />
+      <MiddleBlock id="customer" title="Khách hàng" />
       <Customer></Customer>
     </>
   );

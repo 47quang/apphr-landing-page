@@ -10,6 +10,7 @@ const Styles = createGlobalStyle`
     html,
     a {
         font-family: 'Roboto', sans-serif;
+        scroll-behavior: smooth;
     }
 
 

@@ -38,7 +38,7 @@ const Header = () => {
         <S.CustomNavLinkSmall>
           <S.CustomLink to="/">{t('About')}</S.CustomLink>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall style={{ width: '180px' }}>
+        <S.CustomNavLinkSmall style={{ width: '150px' }}>
           <Link to="/">
             <Button style={{ color: 'black', background: 'white' }}>{t('Sign Up')}</Button>
           </Link>
