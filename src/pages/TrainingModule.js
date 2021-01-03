@@ -6,8 +6,13 @@ import Quotation from '../components/Quotation';
 import Customer from '../components/Customer';
 import HeaderOnPage from '../components/HeaderOnPage';
 import ContactForm from '../components/ContactForm';
+import Introduction from '../components/IntroductionTraining';
+
 
 import { useTranslation } from 'react-i18next';
+
+const menu = ['Introduction', 'Quotation', 'Customer', 'Contact'];
+
 
 
 const TrainingModule = () => {
@@ -16,14 +21,19 @@ const TrainingModule = () => {
     <>
       <Container>
         <ScrollToTop />
-        <HeaderOnPage></HeaderOnPage>
-        
-        <MiddleBlock id="quotation" title={t('Quotation')} />
+        <HeaderOnPage menu={menu}></HeaderOnPage>
+      </Container>
+      <div style={{width: '100%', background: '#e7e7e7', paddingBottom: '50px'}}>
+      <MiddleBlock id="Introduction" title={t('Managing the staff training becomes easier')} />
+      <Introduction></Introduction>
+      </div>
+      <Container>
+        <MiddleBlock id="Quotation" title={t('Quotation')} />
         <Quotation></Quotation>
       </Container>
-      <MiddleBlock id="customer" title={t('Customer')} />
+      <MiddleBlock id="Customer" title={t('Customer')} />
       <Customer></Customer>
-      <MiddleBlock id="contact" title={t('Contact')} />
+      <MiddleBlock id="Contact" title={t('Contact')} />
       <ContactForm></ContactForm>
     </>
   );

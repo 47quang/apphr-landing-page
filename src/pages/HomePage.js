@@ -14,14 +14,14 @@ import ContactForm from '../components/ContactForm';
 
 import { useTranslation } from 'react-i18next';
 
-
 const HomePage = () => {
   const { t } = useTranslation();
+  const menu = ['Introduction', 'Service', 'Quotation', 'Customer', 'Contact'];
   return (
     <>
       <Container>
         <ScrollToTop />
-        <HeaderOnPage></HeaderOnPage>
+        <HeaderOnPage menu={menu}></HeaderOnPage>
         <ContentBlock
           type="right"
           first="true"
@@ -30,7 +30,7 @@ const HomePage = () => {
           button={Introduction.button}
           icon="designer_1.svg"
         />
-        <MiddleBlock id="service" title={t('Service')} />
+        <MiddleBlock id="Service" title={t('Service')} />
         <ContentBlock
           type="right"
           mt="2"
@@ -52,12 +52,12 @@ const HomePage = () => {
           button={FourthBlock.button}
           icon="training.svg"
         />
-        <MiddleBlock id="quotation" title={t('Quotation')} />
+        <MiddleBlock id="Quotation" title={t('Quotation')} />
         <Quotation></Quotation>
       </Container>
-      <MiddleBlock id="customer" title={t('Customer')} />
+      <MiddleBlock id="Customer" title={t('Customer')} />
       <Customer></Customer>
-      <MiddleBlock id="contact" title={t('Contact')} />
+      <MiddleBlock id="Contact" title={t('Contact')} />
       <ContactForm></ContactForm>
     </>
   );
