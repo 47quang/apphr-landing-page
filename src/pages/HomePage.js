@@ -23,6 +23,7 @@ const HomePage = () => {
         <ScrollToTop />
         <HeaderOnPage menu={menu}></HeaderOnPage>
         <ContentBlock
+          id="Introduction"
           type="right"
           first="true"
           title={Introduction.title}
