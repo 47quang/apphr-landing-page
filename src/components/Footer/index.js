@@ -23,11 +23,11 @@ const Footer = () => {
               <S.Para>
                 {t(`Do you have any question regarding the project? Fell free to reach out.`)}
               </S.Para>
-              <a href="mailto:l.qqbadze@gmail.com">
+              {/* <a href="mailto:l.qqbadze@gmail.com">
                 <S.Chat>{t(`Let's Chat`)}</S.Chat>
-              </a>
+              </a> */}
             </Col>
-            <Col lg={8} md={8} sm={12} xs={24}>
+            {/* <Col lg={8} md={8} sm={12} xs={24}>
               <S.Title>{t('Policy')}</S.Title>
               <S.Large to="/" left="true">
                 {t('Application Security')}
@@ -35,7 +35,7 @@ const Footer = () => {
               <S.Large left="true" to="/">
                 {t('Software Principles')}
               </S.Large>
-            </Col>
+            </Col> */}
             <Col lg={6} md={6} sm={12} xs={24}>
               <S.Empty />
               <S.Large left="true" to="/">
@@ -54,7 +54,7 @@ const Footer = () => {
               <S.Para>2131 Elk Street</S.Para>
               <S.Para>California</S.Para>
             </Col>
-            <Col lg={8} md={8} sm={12} xs={24}>
+            {/* <Col lg={8} md={8} sm={12} xs={24}>
               <S.Title>{t('Company')}</S.Title>
               <S.Large left="true" to="/">
                 {t('About')}
@@ -68,7 +68,7 @@ const Footer = () => {
               <S.Large left="true" to="/">
                 {t('Careers & Culture')}
               </S.Large>
-            </Col>
+            </Col> */}
             <Col lg={6} md={6} sm={12} xs={24}>
               <S.Select>
                 <S.Language>{t('Language')}</S.Language>

@@ -1,11 +1,11 @@
-import React, { useState, Fragment } from 'react';
-import { Row, Col, Drawer } from 'antd';
+import { Col, Drawer, Row } from 'antd';
+import React, { Fragment, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
-import { useTranslation } from 'react-i18next';
-import PngIcon from '../../common/PngIcon';
 import Button from '../../common/Button';
 import Container from '../../common/Container';
+import PngIcon from '../../common/PngIcon';
 import * as S from './styles';
 
 const Header = (props) => {
@@ -31,9 +31,9 @@ const Header = (props) => {
         <S.CustomNavLinkSmall>
           <S.CustomLink to="/hr-module">{t('Human Resources')}</S.CustomLink>
         </S.CustomNavLinkSmall>
-        <S.CustomNavLinkSmall>
+        {/* <S.CustomNavLinkSmall>
           <S.CustomLink to="/training-module">{t('Training')}</S.CustomLink>
-        </S.CustomNavLinkSmall>
+        </S.CustomNavLinkSmall> */}
         <S.CustomNavLinkSmall>
           <S.CustomLink to="/about">{t('About')}</S.CustomLink>
         </S.CustomNavLinkSmall>
@@ -53,15 +53,15 @@ const Header = (props) => {
           <Row type="flex" justify="space-between" gutter={20}>
             <Col style={{ display: 'flex', alignItems: 'center' }}>
               <S.LogoContainer to="/">
-                <PngIcon src="logo.png" style={{ height: 70, alignItems: 'center' }} />
+                <PngIcon src="long_logo_web.png" style={{ height: 70, alignItems: 'center' }} />
               </S.LogoContainer>
             </Col>
-            <Col span={7}></Col>
-            <S.NotHidden>
+            {/* <Col span={7}></Col> */}
+            {/* <S.NotHidden> */}
               <Col style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
                 <MenuItem/>
               </Col>
-            </S.NotHidden>
+            {/* </S.NotHidden> */}
             <S.Burger onClick={showDrawer}>
               <S.Outline />
             </S.Burger>

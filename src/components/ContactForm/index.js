@@ -25,6 +25,7 @@ const Contact = ({ id, title, content }) => {
   return (
     <S.ContactContainer id={id}>
       <S.Contact>
+        
         <Row type="flex" justify="center" align="middle">
           <S.FormGroup autoComplete="off" onSubmit={handleSubmit}>
             <Col lg={24} md={24} sm={24} xs={24}>

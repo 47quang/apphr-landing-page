@@ -1,22 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Container from '../common/Container';
 import ScrollToTop from '../common/ScrollToTop';
+import ContactForm from '../components/ContactForm';
 import ContentBlock from '../components/ContentBlock';
-import Introduction from '../content/introduction.json';
+import HeaderOnPage from '../components/HeaderOnPage';
 import MiddleBlock from '../components/MiddleBlock';
+import Quotation from '../components/Quotation';
+import Introduction from '../content/introduction.json';
 import SecondBlock from '../content/secondBlock.json';
 import ThirdBlock from '../content/thirdBlock.json';
-import FourthBlock from '../content/fourthBlock.json';
-import Quotation from '../components/Quotation';
-import Customer from '../components/Customer';
-import HeaderOnPage from '../components/HeaderOnPage';
-import ContactForm from '../components/ContactForm';
 
-import { useTranslation } from 'react-i18next';
 
 const HomePage = () => {
   const { t } = useTranslation();
-  const menu = ['Introduction', 'Service', 'Quotation', 'Customer', 'Contact'];
+  const menu = ['Introduction', 'Service', 'Quotation', 'Contact'];
   return (
     <>
       <Container>
@@ -45,21 +43,21 @@ const HomePage = () => {
           button={ThirdBlock.button}
           icon="data.svg"
         />
-        <ContentBlock
+        {/* <ContentBlock
           type="left"
           mt="10"
           title={FourthBlock.title}
           content={FourthBlock.text}
           button={FourthBlock.button}
           icon="training.svg"
-        />
+        /> */}
         <MiddleBlock id="Quotation" title={t('Quotation')} />
-        <Quotation></Quotation>
+        <Quotation/>
       </Container>
-      <MiddleBlock id="Customer" title={t('Customer')} />
-      <Customer></Customer>
+      {/* <MiddleBlock id="Customer" title={t('Customer')} />
+      <Customer/> */}
       <MiddleBlock id="Contact" title={t('Contact')} />
-      <ContactForm></ContactForm>
+      <ContactForm/>
     </>
   );
 };

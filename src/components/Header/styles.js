@@ -54,7 +54,6 @@ export const Burger = styled.div`
 `;
 
 export const NotHidden = styled.div`
-  margin: auto;
   @media only screen and (max-width: 768px) {
     display: none;
   }
