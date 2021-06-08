@@ -8,7 +8,7 @@ const MenuItem = ({ menu }) => {
     <Fragment>
       {menu.map((i) => {
         return (
-          <S.CustomNavLinkSmall>
+          <S.CustomNavLinkSmall key={i}>
             <S.CustomLink href={`#${i}`}>{t(i)}</S.CustomLink>
           </S.CustomNavLinkSmall>
         );
