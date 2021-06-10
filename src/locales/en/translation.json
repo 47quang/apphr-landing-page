@@ -62,5 +62,7 @@
   "select_province": "Select province",
   "select_district": "Select district",
   "select_ward": "Select ward",
-  "intro_password": "at lease 6 characters"
+  "intro_password": "at lease 6 characters",
+  "message_unknown_error": "An unknown error occurred",
+  "message_account_existed": "Company account has already existed"
 }

@@ -1,6 +1,6 @@
 import { Col, Row } from "antd";
 import { Formik } from "formik";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 import PngIcon from "../../../common/PngIcon/index.js";
@@ -9,10 +9,11 @@ import "./style.css";
 
 const SignUpModal = (props) => {
   const EMPTY_SELECTED = "empty";
+  const SIGN_UP_MODAL_ID = "modalSignUp";
   const BASE_URL = "https://apphr.me";
   const { t } = useTranslation();
   const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[\d]*$/;
-  const [signUpForm, setSignUpForm] = useState({
+  const emptySignUpForm = {
     name: "",
     code: "",
     email: "",
@@ -25,7 +26,7 @@ const SignUpModal = (props) => {
     note: "",
     username: "",
     password: "",
-  });
+  };
   const getLabel = (text, isRequired, introduction) => {
     return (
       <label>
@@ -181,71 +182,124 @@ const SignUpModal = (props) => {
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
+  const [locationId, setLocationId] = useState({
+    provinceId: 1,
+    districtId: 0,
+    wardId: 0,
+  });
+  const signUpFormRef = useRef();
   useEffect(() => {
     fetchData(BASE_URL + "/api.province").then(({ payload }) => {
       setProvinces(payload);
       let provinceId = payload.length === 0 ? 0 : payload[0].id;
-      setSignUpForm((prevState) => ({
+      setLocationId((prevState) => ({
         ...prevState,
         provinceId: provinceId,
       }));
+      signUpFormRef.current.setFieldValue("provinceId", +provinceId);
     });
   }, []);
   useEffect(() => {
     fetchData(
-      BASE_URL + "/api.province/" + signUpForm.provinceId + "/district"
+      BASE_URL + "/api.province/" + locationId.provinceId + "/district"
     ).then(({ payload }) => {
       setDistricts(payload);
       let districtId = payload.length === 0 ? 0 : payload[0].id;
-      setSignUpForm((prevState) => ({
+      setLocationId((prevState) => ({
         ...prevState,
         districtId: districtId,
       }));
+      signUpFormRef.current.setFieldValue("districtId", +districtId);
     });
-  }, [signUpForm.provinceId]);
+  }, [locationId.provinceId]);
   useEffect(() => {
     fetchData(
-      BASE_URL + "/api.district/" + signUpForm.districtId + "/ward"
+      BASE_URL + "/api.district/" + locationId.districtId + "/ward"
     ).then(({ payload }) => {
       setWards(payload);
       let wardId = payload.length === 0 ? 0 : payload[0].id;
-      setSignUpForm((prevState) => ({
+      setLocationId((prevState) => ({
         ...prevState,
         wardId: wardId,
       }));
+      signUpFormRef.current.setFieldValue("wardId", +wardId);
     });
-  }, [signUpForm.districtId]);
+  }, [locationId.districtId]);
   const submitForm = async (value) => {
+    console.log(value);
     const response = await fetch(BASE_URL + "/api.tenant/register", {
       method: "POST",
-      body: value,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(value),
     });
     return response.json();
   };
+  const closeModal = (e) => {
+    document.getElementById(SIGN_UP_MODAL_ID).style.display = "none";
+    signUpFormRef.current.handleReset();
+    setErrorMessage("");
+    setLocationId({ provinceId: 0, districtId: 0, wardId: 0 });
+  };
+  const [errorMessage, setErrorMessage] = useState("");
+
   return (
-    <ModalContainer id="modalSignUp">
+    <ModalContainer id={SIGN_UP_MODAL_ID}>
       <div className="modal-content card-4 animate-zoom">
-        <div className="center" role="button">
+        <Row justify="end">
           <br />
           <span
-            onClick={() => {
-              document.getElementById("modalSignUp").style.display = "none";
-            }}
-            className="button x-large hover-red display-topright"
+            onClick={closeModal}
+            className="button x-large hover-red"
             title="Close Modal"
             role="button"
           >
             &times;
           </span>
-        </div>
+        </Row>
+
         <Row justify="center" align="middle">
           <Col xl={15} lg={12} md={24} sm={24} xs={24}>
             <Formik
-              initialValues={signUpForm}
+              innerRef={signUpFormRef}
+              initialValues={emptySignUpForm}
               enableReinitialize
               validationSchema={signUpInfoSchema}
               onSubmit={(value) => {
-                submitForm().then((data) => {});
+                submitForm({
+                  ...value,
+                  provinceId: +value.provinceId,
+                  districtId: +value.districtId,
+                  wardId: +value.wardId,
+                })
+                  .then((data) => {
+                    console.log(data);
+                    if (data.status >= 400) {
+                      let err = "";
+                      switch (data.message.en) {
+                        case "Validation failed: phone must be a valid phone number":
+                          err = "enter_valid_phone_number";
+                          break;
+                        case "Validation failed: email must be an email":
+                          err = "enter_valid_email";
+                          break;
+                        case "tenant is already existed":
+                          err = "message_account_existed";
+                          break;
+                        default:
+                          err = "message_unknown_error";
+                          break;
+                      }
+                      console.log(err);
+                      setErrorMessage(t(err));
+                    } else {
+                      closeModal();
+                    }
+                  })
+                  .catch((err) => {
+                    setErrorMessage(t("message_unknown_error"));
+                  });
               }}
             >
               {({
@@ -391,7 +445,7 @@ const SignUpModal = (props) => {
                         value={values.provinceId}
                         onBlur={handleBlur("provinceId")}
                         onChange={(e) => {
-                          setSignUpForm((prevState) => ({
+                          setLocationId((prevState) => ({
                             ...prevState,
                             provinceId: e.target.value,
                           }));
@@ -422,7 +476,7 @@ const SignUpModal = (props) => {
                         value={values.districtId}
                         onBlur={handleBlur("districtId")}
                         onChange={(e) => {
-                          setSignUpForm((prevState) => ({
+                          setLocationId((prevState) => ({
                             ...prevState,
                             districtId: e.target.value,
                           }));
@@ -529,7 +583,7 @@ const SignUpModal = (props) => {
                         onChange={handleChange("password")}
                         inputID={"password"}
                         labelText={t("password")}
-                        inputType={"text"}
+                        inputType={"password"}
                         placeholder={t("enter_password")}
                         inputClassName={"input border"}
                         isRequiredField
@@ -540,14 +594,18 @@ const SignUpModal = (props) => {
                       />
                     </Col>
                   </Row>
-
-                  <button
-                    className="button register section padding"
-                    type="button"
-                    onClick={handleSubmit}
-                  >
-                    Gửi đăng ký
-                  </button>
+                  <Row align="middle">
+                    <button
+                      className="button register section padding"
+                      type="button"
+                      onClick={handleSubmit}
+                    >
+                      Gửi đăng ký
+                    </button>
+                    <label className="error-message text-danger">
+                      {errorMessage}
+                    </label>
+                  </Row>
                 </form>
               )}
             </Formik>

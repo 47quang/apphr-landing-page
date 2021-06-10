@@ -1614,7 +1614,7 @@ a {
 }
 
 .container {
-  margin: 30px 12px;
+  margin: 0px 12px;
   /* border-radius: 10px;
   box-shadow: 5px 5px 15px lightgrey; */
 }
@@ -1652,11 +1652,11 @@ a {
 }
 
 .is-invalid {
-  border: 1.5px solid red !important;
+  border: 2px solid red !important;
 }
 
 .is-valid {
-  border: 1.5px solid green !important;
+  border: 2px solid #69b00b !important;
 }
 
 .select-background {
@@ -1667,4 +1667,8 @@ a {
 
 .input-introduction {
   font-size: 10px;
+}
+
+.error-message {
+  margin-left: 10px;
 }

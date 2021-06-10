@@ -65,5 +65,7 @@
   "required_select_province": "Bắt buộc chọn Tỉnh/Thành phố",
   "required_select_district": "Bắt buộc chọn Quận/Huyện",
   "required_select_ward": "Bắt buộc chọn Phường/Xã/Thị trấn",
-  "intro_password": "tối thiểu 6 ký tự"
+  "intro_password": "tối thiểu 6 ký tự",
+  "message_unknown_error": "Đã có lỗi bất thường xảy ra",
+  "message_account_existed": "Tài khoản đã tồn tại"
 }

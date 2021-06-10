@@ -21,7 +21,6 @@ const Header = (props) => {
   const onClose = () => {
     setVisibility(!visible);
   };
-
   const MenuItem = () => {
     return (
       <Fragment>
