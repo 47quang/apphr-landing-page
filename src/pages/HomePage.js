@@ -46,6 +46,11 @@ const HomePage = () => {
           type="left"
           content={ThirdBlock.text}
           button={ThirdBlock.button}
+          onClickButton={[
+            () => {
+              window.location.href = "hr-module";
+            },
+          ]}
           icon="data.svg"
         />
         {/* <ContentBlock

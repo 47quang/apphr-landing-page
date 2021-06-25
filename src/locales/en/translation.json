@@ -82,6 +82,13 @@
   "roll_up_mobile": "Roll up on Mobile",
   "roll_up_mobile_content": "Use a mobile device to take attendance and send requests",
   "quotation_description": "You can use the attendance management system with the number of employee account creations up to {0} accounts",
-  "homepage_introduction_title": "",
-  "homepage_introduction_text": ""
+  "homepage_introduction_title": "Human Resource Management Solutions for Businesses",
+  "homepage_introduction_text": "Our team is proud to provide support systems for businesses in the fields of human resource management. Support HR department to manage data smoothly and efficiently.",
+  "homepage_second_block_title": "Timekeeping Management System",
+  "homepage_second_block_text": "Including a mobile application that supports employee attendance through the enterprise intranet or scans QR codes, assists employees in creating requests suitable for use as well as updating the latest announcements from the business. business and some basic statistics to help employees manage their own hours and work performance in the near future.",
+  "homepage_third_block_text": "In addition, in the timekeeping management system, we also support a user-friendly data management website, allowing businesses to store employee data easily, decentralized for flexible users as well as control the work to operate smoothly.",
+  "CSE": "Faculty of Computer Science and Engineering",
+  "HCMUT": "Ho Chi Minh University of Technology",
+  "cse_address": "Building A3, 268 Ly Thuong Kiet Street, Ward 14, District 10, Ho Chi Minh City",
+  "VN": "Vietnam"
 }
