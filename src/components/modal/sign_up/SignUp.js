@@ -3,13 +3,20 @@ import { Formik } from "formik";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
-import PngIcon from "../../../common/PngIcon/index.js";
 import { ModalContainer } from "./SignUpStyle.js";
 import "./style.css";
-
+const SIGN_UP_MODAL_ID = "modalSignUp";
+export const openSignUpPopUp = (isOpen = false) => {
+  let display = "";
+  if (isOpen === true) display = "block";
+  else {
+    display = "none";
+  }
+  document.getElementById(SIGN_UP_MODAL_ID).style.display = display;
+};
 const SignUpModal = (props) => {
   const EMPTY_SELECTED = "empty";
-  const SIGN_UP_MODAL_ID = "modalSignUp";
+
   const BASE_URL = "https://apphr.me";
   const { t } = useTranslation();
   const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[\d]*$/;
@@ -226,7 +233,6 @@ const SignUpModal = (props) => {
     });
   }, [locationId.districtId]);
   const submitForm = async (value) => {
-    console.log(value);
     const response = await fetch(BASE_URL + "/api.tenant/register", {
       method: "POST",
       headers: {
@@ -237,7 +243,7 @@ const SignUpModal = (props) => {
     return response.json();
   };
   const closeModal = (e) => {
-    document.getElementById(SIGN_UP_MODAL_ID).style.display = "none";
+    openSignUpPopUp(false);
     signUpFormRef.current.handleReset();
     setErrorMessage("");
     setLocationId({ provinceId: 0, districtId: 0, wardId: 0 });
@@ -246,7 +252,7 @@ const SignUpModal = (props) => {
 
   return (
     <ModalContainer id={SIGN_UP_MODAL_ID}>
-      <div className="modal-content card-4 animate-zoom">
+      <div className="modal-content card-4 animate-zoom col.l3">
         <Row justify="end">
           <br />
           <span
@@ -260,7 +266,7 @@ const SignUpModal = (props) => {
         </Row>
 
         <Row justify="center" align="middle">
-          <Col xl={15} lg={12} md={24} sm={24} xs={24}>
+          <Col xl={20} lg={24} md={24} sm={24} xs={24}>
             <Formik
               innerRef={signUpFormRef}
               initialValues={emptySignUpForm}
@@ -274,7 +280,6 @@ const SignUpModal = (props) => {
                   wardId: +value.wardId,
                 })
                   .then((data) => {
-                    console.log(data);
                     if (data.status >= 400) {
                       let err = "";
                       switch (data.message.en) {
@@ -311,12 +316,12 @@ const SignUpModal = (props) => {
                 touched,
               }) => (
                 <form id="submitForm" className="container">
-                  <h1 className={"sign-up-title"}>Đăng ký</h1>
+                  <h1 className={"sign-up-title"}>{t("Sign Up")}</h1>
                   <Row justify="space-between">
                     <Col
                       xl={11}
-                      lg={24}
-                      md={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -337,9 +342,9 @@ const SignUpModal = (props) => {
                       />
                     </Col>
                     <Col
-                      xl={12}
-                      lg={24}
-                      md={12}
+                      xl={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -363,8 +368,8 @@ const SignUpModal = (props) => {
                   <Row justify="space-between">
                     <Col
                       xl={11}
-                      lg={24}
-                      md={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -385,9 +390,9 @@ const SignUpModal = (props) => {
                       />
                     </Col>
                     <Col
-                      xl={12}
-                      lg={24}
-                      md={12}
+                      xl={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -411,8 +416,8 @@ const SignUpModal = (props) => {
                   <Row justify="space-between">
                     <Col
                       xl={11}
-                      lg={24}
-                      md={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -434,9 +439,9 @@ const SignUpModal = (props) => {
                     </Col>
 
                     <Col
-                      xl={12}
-                      lg={24}
-                      md={12}
+                      xl={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -466,8 +471,8 @@ const SignUpModal = (props) => {
                   <Row justify="space-between">
                     <Col
                       xl={11}
-                      lg={24}
-                      md={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -494,9 +499,9 @@ const SignUpModal = (props) => {
                       />
                     </Col>
                     <Col
-                      xl={12}
-                      lg={24}
-                      md={12}
+                      xl={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -547,8 +552,8 @@ const SignUpModal = (props) => {
                   <Row justify="space-between">
                     <Col
                       xl={11}
-                      lg={24}
-                      md={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -570,9 +575,9 @@ const SignUpModal = (props) => {
                     </Col>
 
                     <Col
-                      xl={12}
-                      lg={24}
-                      md={12}
+                      xl={11}
+                      lg={11}
+                      md={24}
                       sm={24}
                       xs={24}
                       className="margin-bottom"
@@ -600,7 +605,7 @@ const SignUpModal = (props) => {
                       type="button"
                       onClick={handleSubmit}
                     >
-                      Gửi đăng ký
+                      {t("send")}
                     </button>
                     <label className="error-message text-danger">
                       {errorMessage}
@@ -609,20 +614,6 @@ const SignUpModal = (props) => {
                 </form>
               )}
             </Formik>
-          </Col>
-          <Col xl={8} lg={12} md={0} sm={0} xs={0}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <PngIcon src="long_logo_web.png" className={"logo-container"} />
-              <PngIcon src="announce.png" className={"announce-container"} />
-              <PngIcon src="Path.png" className={"path-container"} />
-            </div>
           </Col>
         </Row>
       </div>

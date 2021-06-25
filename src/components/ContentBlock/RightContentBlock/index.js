@@ -8,12 +8,21 @@ import Button from "../../../common/Button";
 
 import * as S from "./styles";
 
-const RightBlock = ({ last, first, title, content, button, icon, ...rest }) => {
+const RightBlock = ({
+  last,
+  first,
+  title,
+  content,
+  button,
+  onClickButton,
+  icon,
+  ...rest
+}) => {
   const { t } = useTranslation();
 
   return (
     <S.RightBlockContainer last={last} first={first} {...rest}>
-      <Row type="flex" justify="space-between" align={title ? null: 'middle'}>
+      <Row type="flex" justify="space-between" align={title ? null : "middle"}>
         <Col lg={11} md={11} sm={12} xs={24}>
           <Slide left>
             <S.ContentWrapper>
@@ -24,7 +33,16 @@ const RightBlock = ({ last, first, title, content, button, icon, ...rest }) => {
                   typeof button === "object" &&
                   button.map((item, id) => {
                     return (
-                      <Button key={id} color={item.color} width="true">
+                      <Button
+                        key={id}
+                        color={item.color}
+                        width="true"
+                        onClick={(e) => {
+                          if (onClickButton[id]) {
+                            onClickButton[id](e);
+                          }
+                        }}
+                      >
                         {t(item.title)}
                       </Button>
                     );
