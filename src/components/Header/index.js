@@ -5,7 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import Button from "../../common/Button";
 import Container from "../../common/Container";
 import PngIcon from "../../common/PngIcon";
-import SignUpModal from "../modal/sign_up/SignUp";
+import SignUpModal, { openSignUpPopUp } from "../modal/sign_up/SignUp";
 import * as S from "./styles";
 
 const Header = (props) => {
@@ -42,7 +42,7 @@ const Header = (props) => {
           <Button
             style={{ color: "black", background: "white" }}
             onClick={() => {
-              document.getElementById("modalSignUp").style.display = "block";
+              openSignUpPopUp(true);
             }}
           >
             {t("Sign Up")}

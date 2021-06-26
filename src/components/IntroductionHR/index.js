@@ -3,47 +3,45 @@ import Container from "../../common/Container";
 import * as S from "./styles";
 import { Row, Col } from "antd";
 import PngIcon from "../../common/PngIcon";
+import { useTranslation } from "react-i18next";
 
 const card = [
   {
-    title: "Điểm danh trên ứng dụng di động",
-    content: "Dùng thiết bị di động để điểm danh và gửi các đề xuất",
+    title: "roll_up_mobile",
+    content: "roll_up_mobile_content",
     src: "mobile.png",
   },
   {
-    title: "Quản lý điểm danh",
-    content:
-      "Tổng hợp điểm danh dạng bảng và lịch giúp nhân viên dễ dàng quản lý nguồn dữ liệu",
+    title: "roll_call_management",
+    content: "roll_call_manage_content",
     src: "roll-up.png",
   },
   {
-    title: "Quản lý đề xuất",
-    content:
-      "Tổng hợp đề xuất của nhân viên thành bảng, dễ dàng cho việc quản lý dữ liệu, hỗ trợ xử lý đề xuất.",
+    title: "request_management",
+    content: "request_manage_content",
     src: "request.png",
   },
   {
-    title: "Quản lý nhân viên",
-    content:
-      "Quản lý tài khoản người dùng, và thông tin cũng như những hoạt động gần đây của tài khoản",
+    title: "employee_management",
+    content: "employee_manage_content",
     src: "employee.png",
   },
 
   {
-    title: "Quản lý hợp đồng",
-    content: "Quản lý các hợp đồng đã ký kết với nhân viên",
+    title: "contract_management",
+    content: "contract_manage_content",
     src: "contract.png",
   },
   {
-    title: "Quản lý thông báo",
-    content:
-      "Đăng thông báo để cập nhật tình hình doanh nghiệp một cách dễ dàng, nhanh chóng",
+    title: "notification_management",
+    content: "notification_content",
     src: "notification.png",
   },
 ];
 
 const Introduction = () => {
   const [state, setState] = useState(0);
+  const { t } = useTranslation();
 
   const handleChange = (index) => {
     setState(index);
@@ -61,8 +59,8 @@ const Introduction = () => {
                   className={index === state ? "active" : null}
                   onClick={() => handleChange(index)}
                 >
-                  <S.CardTitle>{title}</S.CardTitle>
-                  <S.CardContent>{content}</S.CardContent>
+                  <S.CardTitle>{t(title)}</S.CardTitle>
+                  <S.CardContent>{t(content)}</S.CardContent>
                 </S.Card>
               </Row>
             );
