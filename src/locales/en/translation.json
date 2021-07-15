@@ -90,5 +90,7 @@
   "CSE": "Faculty of Computer Science and Engineering",
   "HCMUT": "Ho Chi Minh University of Technology",
   "cse_address": "Building A3, 268 Ly Thuong Kiet Street, Ward 14, District 10, Ho Chi Minh City",
-  "VN": "Vietnam"
+  "VN": "Vietnam",
+  "sign_up_warning": "Businesses have 14 days of free use when you sign up successfully",
+  "register_success": "Send request successfully"
 }

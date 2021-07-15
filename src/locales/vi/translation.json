@@ -90,5 +90,7 @@
   "CSE": "Khoa Khoa học và Kỹ thuật Máy tính",
   "HCMUT": "Trường Đại học Bách Khoa",
   "cse_address": "Tòa nhà A3, 268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
-  "VN": "Việt Nam"
+  "VN": "Việt Nam",
+  "sign_up_warning": "Doanh nghiệp có 14 ngày sử dụng miễn phí khi đăng ký thành công",
+  "register_success": "Đã gửi thành công"
 }
