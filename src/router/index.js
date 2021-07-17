@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import About from "../pages/About";
+import ActivatePage from "../pages/active_page/ActivatePage";
 import HomePage from "../pages/HomePage";
 import HrModule from "../pages/HrModule";
-
 
 const Router = () => {
   return (
@@ -16,6 +16,8 @@ const Router = () => {
         <Route exact path={"/hr-module"} component={HrModule} />
         {/* <Route exact path={"/training-module"} component={TrainingModule} /> */}
         <Route exact path={"/about"} component={About} />
+        <Route exact path={"/active/:id"} component={ActivatePage} />
+        <Redirect to={"/"} />
       </Switch>
       <Footer />
     </Suspense>

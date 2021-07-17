@@ -1,6 +1,7 @@
 import { Col, Row } from "antd";
 import { Formik } from "formik";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
 import { ModalContainer } from "./SignUpStyle.js";
@@ -18,6 +19,7 @@ const SignUpModal = (props) => {
   const EMPTY_SELECTED = "empty";
 
   const BASE_URL = "https://apphr.me";
+
   const { t } = useTranslation();
   const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[\d]*$/;
   const emptySignUpForm = {
@@ -253,6 +255,7 @@ const SignUpModal = (props) => {
   };
   const [message, setMessage] = useState("");
   const [isDisplaySuccessMessage, setIsDisplaySuccessMessage] = useState(false);
+  const GOOGLE_MAP_API = "";
   return (
     <ModalContainer id={SIGN_UP_MODAL_ID}>
       <div className="modal-content card-4 animate-zoom col.l3">
@@ -554,6 +557,55 @@ const SignUpModal = (props) => {
                         isError={errors.address && touched.address}
                         errorMessage={t(errors.address)}
                       />
+                      {/* <GooglePlacesAutocomplete apiKey={GOOGLE_MAP_API} /> */}
+                      {/* <PlacesAutocomplete
+                        value={values.address}
+                        onChange={handleChange("address")}
+                      >
+                        {({
+                          getInputProps,
+                          suggestions,
+                          getSuggestionItemProps,
+                          loading,
+                        }) => (
+                          <div>
+                            <input
+                              {...getInputProps({
+                                placeholder: "Search Places ...",
+                                className: "location-search-input",
+                              })}
+                            />
+                            <div className="autocomplete-dropdown-container">
+                              {loading && <div>Loading...</div>}
+                              {suggestions.map((suggestion) => {
+                                const className = suggestion.active
+                                  ? "suggestion-item--active"
+                                  : "suggestion-item";
+                                // inline style for demonstration purpose
+                                const style = suggestion.active
+                                  ? {
+                                      backgroundColor: "#fafafa",
+                                      cursor: "pointer",
+                                    }
+                                  : {
+                                      backgroundColor: "#ffffff",
+                                      cursor: "pointer",
+                                    };
+                                return (
+                                  <div
+                                    {...getSuggestionItemProps(suggestion, {
+                                      className,
+                                      style,
+                                    })}
+                                  >
+                                    <span>{suggestion.description}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                      </PlacesAutocomplete> */}
                     </Col>
                   </Row>
                   <Row justify="space-between">

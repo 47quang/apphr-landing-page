@@ -1700,3 +1700,7 @@ a {
 .text-success {
   color: green;
 }
+
+.form-container {
+  margin-bottom: 10px;
+}
