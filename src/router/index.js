@@ -16,7 +16,7 @@ const Router = () => {
         <Route exact path={"/hr-module"} component={HrModule} />
         {/* <Route exact path={"/training-module"} component={TrainingModule} /> */}
         <Route exact path={"/about"} component={About} />
-        <Route exact path={"/active/:id"} component={ActivatePage} />
+        <Route exact path={"/verify"} component={ActivatePage} />
         <Redirect to={"/"} />
       </Switch>
       <Footer />
