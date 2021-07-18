@@ -1,9 +1,9 @@
 import { Col, Row } from "antd";
 import { Formik } from "formik";
 import React, { useEffect, useRef, useState } from "react";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
+import { BASE_URL } from "../../../constants/key.js";
 import { ModalContainer } from "./SignUpStyle.js";
 import "./style.css";
 const SIGN_UP_MODAL_ID = "modalSignUp";
@@ -17,8 +17,6 @@ export const openSignUpPopUp = (isOpen = false) => {
 };
 const SignUpModal = (props) => {
   const EMPTY_SELECTED = "empty";
-
-  const BASE_URL = "https://apphr.me";
 
   const { t } = useTranslation();
   const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[\d]*$/;
@@ -255,7 +253,7 @@ const SignUpModal = (props) => {
   };
   const [message, setMessage] = useState("");
   const [isDisplaySuccessMessage, setIsDisplaySuccessMessage] = useState(false);
-  const GOOGLE_MAP_API = "";
+  // const GOOGLE_MAP_API = "";
   return (
     <ModalContainer id={SIGN_UP_MODAL_ID}>
       <div className="modal-content card-4 animate-zoom col.l3">
@@ -287,6 +285,7 @@ const SignUpModal = (props) => {
                   .then((data) => {
                     if (data.status >= 400) {
                       let err = "";
+
                       switch (data.message.en) {
                         case "Validation failed: phone must be a valid phone number":
                           err = "enter_valid_phone_number";
@@ -294,6 +293,7 @@ const SignUpModal = (props) => {
                         case "Validation failed: email must be an email":
                           err = "enter_valid_email";
                           break;
+                        case "tenant code is already existed":
                         case "tenant is already existed":
                           err = "message_account_existed";
                           break;
