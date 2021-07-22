@@ -1,8 +1,9 @@
 import { Col, Row } from "antd";
 import { Formik } from "formik";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
+import { BASE_URL } from "../../../constants/key.js";
 import { ModalContainer } from "./SignUpStyle.js";
 import "./style.css";
 const SIGN_UP_MODAL_ID = "modalSignUp";
@@ -17,7 +18,6 @@ export const openSignUpPopUp = (isOpen = false) => {
 const SignUpModal = (props) => {
   const EMPTY_SELECTED = "empty";
 
-  const BASE_URL = "https://apphr.me";
   const { t } = useTranslation();
   const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[\d]*$/;
   const emptySignUpForm = {
@@ -98,10 +98,11 @@ const SignUpModal = (props) => {
     name,
   }) => {
     const checkInputClassName = () => {
-      if (isError) return [inputClassName, "is-invalid"].join(" ");
+      if (isError)
+        return [inputClassName, "is-invalid", "border-radius-input"].join(" ");
       else if (isTouched) {
-        return [inputClassName, "is-valid"].join(" ");
-      } else return inputClassName;
+        return [inputClassName, "is-valid", "border-radius-input "].join(" ");
+      } else return [inputClassName, "border-radius-input"].join(" ");
     };
     return (
       <>
@@ -149,10 +150,11 @@ const SignUpModal = (props) => {
       return acc;
     }, {});
     const checkInputClassName = () => {
-      if (isError) return [selectClassName, "is-invalid"].join(" ");
+      if (isError)
+        return [selectClassName, "is-invalid", "border-radius-input"].join(" ");
       else if (isTouched) {
-        return [selectClassName, "is-valid"].join(" ");
-      } else return selectClassName;
+        return [selectClassName, "is-valid", "border-radius-input"].join(" ");
+      } else return [selectClassName, "border-radius-input"].join(" ");
     };
     return (
       <>
@@ -245,16 +247,17 @@ const SignUpModal = (props) => {
   const closeModal = (e) => {
     openSignUpPopUp(false);
     signUpFormRef.current.handleReset();
-    setErrorMessage("");
+    setMessage("");
+    setIsDisplaySuccessMessage(false);
     setLocationId({ provinceId: 0, districtId: 0, wardId: 0 });
   };
-  const [errorMessage, setErrorMessage] = useState("");
-
+  const [message, setMessage] = useState("");
+  const [isDisplaySuccessMessage, setIsDisplaySuccessMessage] = useState(false);
+  // const GOOGLE_MAP_API = "";
   return (
     <ModalContainer id={SIGN_UP_MODAL_ID}>
       <div className="modal-content card-4 animate-zoom col.l3">
         <Row justify="end">
-          <br />
           <span
             onClick={closeModal}
             className="button x-large hover-red"
@@ -282,6 +285,7 @@ const SignUpModal = (props) => {
                   .then((data) => {
                     if (data.status >= 400) {
                       let err = "";
+
                       switch (data.message.en) {
                         case "Validation failed: phone must be a valid phone number":
                           err = "enter_valid_phone_number";
@@ -289,6 +293,7 @@ const SignUpModal = (props) => {
                         case "Validation failed: email must be an email":
                           err = "enter_valid_email";
                           break;
+                        case "tenant code is already existed":
                         case "tenant is already existed":
                           err = "message_account_existed";
                           break;
@@ -296,14 +301,19 @@ const SignUpModal = (props) => {
                           err = "message_unknown_error";
                           break;
                       }
-                      console.log(err);
-                      setErrorMessage(t(err));
+                      console.debug(err);
+                      setMessage(t(err));
                     } else {
-                      closeModal();
+                      setIsDisplaySuccessMessage(true);
+                      setMessage(t("register_success"));
+                      setTimeout(() => {
+                        closeModal();
+                      }, 1000);
                     }
                   })
                   .catch((err) => {
-                    setErrorMessage(t("message_unknown_error"));
+                    setIsDisplaySuccessMessage(false);
+                    setMessage(t("message_unknown_error"));
                   });
               }}
             >
@@ -547,6 +557,55 @@ const SignUpModal = (props) => {
                         isError={errors.address && touched.address}
                         errorMessage={t(errors.address)}
                       />
+                      {/* <GooglePlacesAutocomplete apiKey={GOOGLE_MAP_API} /> */}
+                      {/* <PlacesAutocomplete
+                        value={values.address}
+                        onChange={handleChange("address")}
+                      >
+                        {({
+                          getInputProps,
+                          suggestions,
+                          getSuggestionItemProps,
+                          loading,
+                        }) => (
+                          <div>
+                            <input
+                              {...getInputProps({
+                                placeholder: "Search Places ...",
+                                className: "location-search-input",
+                              })}
+                            />
+                            <div className="autocomplete-dropdown-container">
+                              {loading && <div>Loading...</div>}
+                              {suggestions.map((suggestion) => {
+                                const className = suggestion.active
+                                  ? "suggestion-item--active"
+                                  : "suggestion-item";
+                                // inline style for demonstration purpose
+                                const style = suggestion.active
+                                  ? {
+                                      backgroundColor: "#fafafa",
+                                      cursor: "pointer",
+                                    }
+                                  : {
+                                      backgroundColor: "#ffffff",
+                                      cursor: "pointer",
+                                    };
+                                return (
+                                  <div
+                                    {...getSuggestionItemProps(suggestion, {
+                                      className,
+                                      style,
+                                    })}
+                                  >
+                                    <span>{suggestion.description}</span>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                      </PlacesAutocomplete> */}
                     </Col>
                   </Row>
                   <Row justify="space-between">
@@ -599,6 +658,11 @@ const SignUpModal = (props) => {
                       />
                     </Col>
                   </Row>
+                  <Row>
+                    <span className="sign-up-warning">
+                      {t("sign_up_warning")}
+                    </span>
+                  </Row>
                   <Row align="middle">
                     <button
                       className="button register section padding"
@@ -607,8 +671,13 @@ const SignUpModal = (props) => {
                     >
                       {t("send")}
                     </button>
-                    <label className="error-message text-danger">
-                      {errorMessage}
+
+                    <label
+                      className={`message ${
+                        isDisplaySuccessMessage ? "text-success" : "text-danger"
+                      }`}
+                    >
+                      {message}
                     </label>
                   </Row>
                 </form>

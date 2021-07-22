@@ -33,9 +33,9 @@
   "company_name": "Company Name",
   "enter_company_name": "Enter company name",
   "required_enter_company_name": "Required to enter Company name",
-  "company_short_name": "Company Abbreviation",
-  "enter_company_short_name": "Enter company abbreviation",
-  "required_enter_company_short_name": "Required to enter company abbreviation",
+  "company_short_name": "Company Workspace",
+  "enter_company_short_name": "Enter company workspace",
+  "required_enter_company_short_name": "Required to enter company workspace",
   "phone_number": "Phone Number",
   "enter_phone_number": "Enter phone number",
   "enter_valid_phone_number": "Invalid phone number",
@@ -90,5 +90,13 @@
   "CSE": "Faculty of Computer Science and Engineering",
   "HCMUT": "Ho Chi Minh University of Technology",
   "cse_address": "Building A3, 268 Ly Thuong Kiet Street, Ward 14, District 10, Ho Chi Minh City",
-  "VN": "Vietnam"
+  "VN": "Vietnam",
+  "sign_up_warning": "Businesses have 14 days of free use when you sign up successfully",
+  "register_success": "Send request successfully",
+  "account_inactive": "Account is not activated successfully",
+  "account_active": "Activate account successfully",
+  "go_to_login_page": "Go to Login Page",
+  "account_active_description": "Congratulate to {0}, you have successfully activated the APPHR system, your business havs 14 days free trial",
+  "invalid_token_active": "Invalid token",
+  "expired_account_token": "Token has been expired"
 }

@@ -33,9 +33,9 @@
   "company_name": "Tên công ty",
   "enter_company_name": "Nhập tên công ty",
   "required_enter_company_name": "Bắt buộc nhập tên của công ty",
-  "company_short_name": "Tên viết tắt của doanh nghiệp",
-  "enter_company_short_name": "Nhập tên viết tắt",
-  "required_enter_company_short_name": "Bắt buộc nhập tên viết tắt",
+  "company_short_name": "Workspace của doanh nghiệp",
+  "enter_company_short_name": "Nhập workspace",
+  "required_enter_company_short_name": "Bắt buộc nhập workspace",
   "phone_number": "Số điện thoại",
   "enter_phone_number": "Nhập số điện thoại",
   "required_enter_phone_number": "Bắt buộc nhập số điện thoại",
@@ -90,5 +90,13 @@
   "CSE": "Khoa Khoa học và Kỹ thuật Máy tính",
   "HCMUT": "Trường Đại học Bách Khoa",
   "cse_address": "Tòa nhà A3, 268 Lý Thường Kiệt, Phường 14, Quận 10, Thành phố Hồ Chí Minh",
-  "VN": "Việt Nam"
+  "VN": "Việt Nam",
+  "sign_up_warning": "Doanh nghiệp có 14 ngày sử dụng miễn phí khi đăng ký thành công",
+  "register_success": "Đã gửi thành công",
+  "account_inactive": "Kích hoạt tài khoản không thành công",
+  "account_active": "Kích hoạt tài khoản thành công",
+  "account_active_description": "Chúc mừng bạn đã kích hoạt thành công hệ thống APPHR, doanh nghiệp của bạn có 14 ngày sử dụng thử hệ thống.",
+  "go_to_login_page": "Đi đến Trang đăng nhập",
+  "invalid_token_active": "Mã kích hoạt không hợp lệ",
+  "expired_account_token": "Token đã hết hiệu lực"
 }

@@ -464,7 +464,8 @@ a {
 .modal-content {
   margin: auto;
   margin-bottom: 100px;
-  width: 65%;
+  width: 60%;
+  border-radius: 20px;
   background-color: #fff;
   position: relative;
   padding: 0;
@@ -708,7 +709,7 @@ a {
     max-width: 95%;
   }
   .modal-content {
-    width: 70%;
+    width: 65%;
   }
 }
 @media (max-width: 600px) {
@@ -746,7 +747,7 @@ a {
 }
 @media (max-width: 768px) {
   .modal-content {
-    width: 90%;
+    width: 65%;
   }
   .modal {
     padding-top: 50px;
@@ -765,7 +766,7 @@ a {
     display: none !important;
   }
   .modal-content {
-    width: 80%;
+    width: 70%;
   }
 }
 @media (max-width: 992px) {
@@ -1320,6 +1321,7 @@ a {
 .hover-red:hover {
   color: #fff !important;
   background-color: #f44336 !important;
+  border-radius: 0 20px;
 }
 .sand,
 .hover-sand:hover {
@@ -1653,11 +1655,11 @@ a {
 
 .sign-up-title {
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .register {
-  background-color: #29a6c2;
+  background-color: #505f98;
   color: white;
   border-radius: 10px;
   font-weight: bold;
@@ -1685,6 +1687,20 @@ a {
   font-size: 10px;
 }
 
-.error-message {
+.message {
   margin-left: 10px;
+}
+.sign-up-warning {
+  font-style: italic;
+  color: #ff9800;
+}
+.border-radius-input {
+  border-radius: 0.25rem;
+}
+.text-success {
+  color: green;
+}
+
+.form-container {
+  margin-bottom: 10px;
 }
