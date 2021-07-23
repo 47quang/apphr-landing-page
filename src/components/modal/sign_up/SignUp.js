@@ -308,7 +308,7 @@ const SignUpModal = (props) => {
                       setMessage(t("register_success"));
                       setTimeout(() => {
                         closeModal();
-                      }, 1000);
+                      }, 3000);
                     }
                   })
                   .catch((err) => {

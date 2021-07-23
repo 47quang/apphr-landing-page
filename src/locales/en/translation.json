@@ -92,7 +92,7 @@
   "cse_address": "Building A3, 268 Ly Thuong Kiet Street, Ward 14, District 10, Ho Chi Minh City",
   "VN": "Vietnam",
   "sign_up_warning": "Businesses have 14 days of free use when you sign up successfully",
-  "register_success": "Send request successfully",
+  "register_success": "Send request successfully. Please check your email to active your company account.",
   "account_inactive": "Account is not activated successfully",
   "account_active": "Activate account successfully",
   "go_to_login_page": "Go to Login Page",
