@@ -12,7 +12,7 @@ import "./styles.css";
 const ActivatePage = (props) => {
   const queryParams = new URLSearchParams(useLocation().search);
   const { t } = useTranslation();
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [linkToHomePage, setLinkToHomePage] = useState("");
   const [companyInfo, setCompanyInfo] = useState({});
@@ -63,6 +63,7 @@ const ActivatePage = (props) => {
         }
       })
       .catch((error) => {
+        setIsActive(false);
         console.debug(error);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -102,7 +103,13 @@ const ActivatePage = (props) => {
   return (
     <Container>
       <ActivatePageContainer>
-        {isActive ? renderActiveLayout() : renderInActiveLayout()}
+        {isActive === null ? (
+          <></>
+        ) : isActive === true ? (
+          renderActiveLayout()
+        ) : (
+          renderInActiveLayout()
+        )}
       </ActivatePageContainer>
     </Container>
   );
